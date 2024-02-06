@@ -2,14 +2,12 @@ const btn = document.getElementById('weather__btn');
 const impData = document.getElementById('weather_city');
 const dDisplay = document.querySelector('.data__display');
 
-
 btn.addEventListener('click', async (e) => {
     e.preventDefault();
     dDisplay.innerHTML = '';
     async function getWeather() {
         const response = await fetch(`https://api.weatherapi.com/v1/current.json?key=dc499f9dd5e341209ca23852240502&q=${impData.value}`);
         const data = await response.json();
-    
         return data;
     
     }
